@@ -3,9 +3,11 @@ pragma solidity 0.8.16;
 
 import '@arbitrum/nitro-contracts-2.1.0/src/osp/IOneStepProofEntry.sol';
 import '@arbitrum/nitro-contracts-2.1.0/src/rollup/IRollupAdmin.sol';
+import '@arbitrum/nitro-contracts-2.1.0/src/rollup/IRollupCore.sol';
+import '@arbitrum/nitro-contracts-2.1.0/src/bridge/ISequencerInbox.sol';
 import '@openzeppelin/contracts/utils/Address.sol';
 import '@openzeppelin/contracts/proxy/transparent/ProxyAdmin.sol';
-
+import '@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol';
 interface IChallengeManagerUpgradeInit {
   function postUpgradeInit(
     IOneStepProofEntry osp_,
