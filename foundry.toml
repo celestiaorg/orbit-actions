@@ -8,5 +8,5 @@ solc_version = '0.8.22'
 optimizer = true
 optimizer_runs = 2000
 via_ir = true
-fs_permissions = [{ access = "read", path = "node_modules/@arbitrum/nitro-contracts-1.2.1"}, { access = "read-write", path = "./scripts/foundry"}]
+fs_permissions = [{ access = "read", path = "node_modules/@arbitrum/"}, { access = "read", path = "node_modules/@openzeppelin/"},{ access = "read-write", path = "./scripts/foundry"}]
 script = 'scripts'
