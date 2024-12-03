@@ -1,6 +1,6 @@
-# Orbit Action Contracts
+# Orbit Action Contracts for Celestia DA
 
-A set of contracts that are similar to Arbitrum [gov-action-contracts](https://github.com/ArbitrumFoundation/governance/tree/main/src/gov-action-contracts), but are designed to be used with the Orbit chains.
+A set of contracts that are similar to Arbitrum [gov-action-contracts](https://github.com/ArbitrumFoundation/governance/tree/main/src/gov-action-contracts), but are designed to be used with Orbit chains looking to migrate to Celestia DA
 
 ## Requirments
 
@@ -98,9 +98,9 @@ This action schedule an upgrade of the ArbOS to a specific version at a specific
 
 ## Common upgrade paths
 
-Here is a list of common upgrade paths that can be used to upgrade the Orbit chains. These instructions are duplicated from the docs on [How to upgrade ArbOS on your Orbit chain](https://docs.arbitrum.io/launch-orbit-chain/how-tos/arbos-upgrade), specifically Steps 1 through 3. Step 4 is mentioned below under "Other Actions".
+Here is a list of common upgrade paths that can be used to upgrade the Orbit chains to Celestia DA.
 
-### [ArbOS 32 Bianca](https://docs.arbitrum.io/run-arbitrum-node/arbos-releases/arbos32)
+### [ArbOS 32 Bianca](https://docs.arbitrum.io/run-arbitrum-node/arbos-releases/arbos32) Migration to Celestia DA 
 
 1. Upgrade your Nitro node(s) to [Nitro v3.3.1](https://github.com/OffchainLabs/nitro/releases/tag/v3.3.1)
 1. Upgrade `nitro-contracts` to `2.1.0` using [nitro-contract 2.1.0 upgrade action](scripts/foundry/contract-upgrades/2.1.0)
