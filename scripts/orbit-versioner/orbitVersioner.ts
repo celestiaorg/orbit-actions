@@ -158,7 +158,7 @@ function _checkForPossibleUpgrades(
     },
     {
       version: 'v3.0.0',
-      actionName: 'XXX',
+      actionName: 'BOLD UpgradeAction',
     },
     {
       version: 'v2.1.0',
