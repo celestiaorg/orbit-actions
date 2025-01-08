@@ -32,7 +32,6 @@ interface RollupHashes {
   RollupAdminLogic: string[]
   RollupUserLogic: string[]
   ChallengeManager: string[]
-  RollupEventInbox: string[]
 }
 interface MetadataHashesByVersion {
   [version: string]: MetadataHashesByNativeToken & RollupHashes
