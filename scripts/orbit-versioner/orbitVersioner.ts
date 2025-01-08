@@ -32,6 +32,7 @@ interface RollupHashes {
   RollupAdminLogic: string[]
   RollupUserLogic: string[]
   ChallengeManager: string[]
+  RollupEventInbox: string[]
 }
 interface MetadataHashesByVersion {
   [version: string]: MetadataHashesByNativeToken & RollupHashes
@@ -155,6 +156,10 @@ function _checkForPossibleUpgrades(
     {
       version: 'v2.1.2',
       actionName: 'NitroContracts2Point1Point2UpgradeAction',
+    },
+    {
+      version: 'v3.0.0',
+      actionName: 'XXX',
     },
     {
       version: 'v2.1.0',
