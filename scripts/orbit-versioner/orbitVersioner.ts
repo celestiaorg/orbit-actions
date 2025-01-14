@@ -161,6 +161,10 @@ function _checkForPossibleUpgrades(
       actionName: 'BOLD UpgradeAction',
     },
     {
+      version: 'v2.1.2',
+      actionName: 'NitroContracts2Point1Point2UpgradeAction',
+    },
+    {
       version: 'v2.1.0',
       actionName: 'NitroContracts2Point1Point0UpgradeAction',
     },
@@ -337,7 +341,39 @@ function _canBeUpgradedToTargetVersion(
         SequencerInbox: ['v1.2.1', 'v1.3.0', 'v2.0.0', 'v2.1.0', 'v2.1.1'],
       }
     }
-  } else if (targetVersion === 'v2.1.0') {
+  } else if (targetVersion === 'v2.1.2') {
+    // v2.1.2 will upgrade the ERC20Bridge contract to set decimals in storage
+    // v2.1.2 is only required for custom fee token chains
+    // only necessary if ERC20Bridge is < v2.0.0
+    // must have performed v2.1.0 upgrade first
+    if (!isFeeTokenChain) {
+      supportedSourceVersionsPerContract = {
+        Inbox: [],
+        Outbox: [],
+        Bridge: [],
+        RollupEventInbox: [],
+        RollupProxy: [],
+        RollupAdminLogic: [],
+        RollupUserLogic: [],
+        ChallengeManager: [],
+        SequencerInbox: [],
+      }
+    }
+    else {
+      supportedSourceVersionsPerContract = {
+        Inbox: ['v1.1.0', 'v1.1.1', 'v1.2.0', 'v1.2.1', 'v1.3.0'],
+        Outbox: ['any'],
+        Bridge: ['v1.1.0', 'v1.1.1', 'v1.2.0', 'v1.2.1', 'v1.3.0'],
+        RollupEventInbox: ['any'],
+        RollupProxy: ['any'],
+        RollupAdminLogic: ['v2.1.0'],
+        RollupUserLogic: ['v2.1.0'],
+        ChallengeManager: ['v2.1.0'],
+        SequencerInbox: ['v1.2.1', 'v1.3.0', 'v2.0.0', 'v2.1.0'],
+      }
+    }
+  }
+  else if (targetVersion === 'v2.1.0') {
     // v2.1.0 will upgrade rollup logics and challenge manager
     supportedSourceVersionsPerContract = {
       Inbox: ['v1.1.0', 'v1.1.1', 'v1.2.0', 'v1.2.1', 'v1.3.0'],
