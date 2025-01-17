@@ -66,6 +66,18 @@ This upgrade is only required if:
 
 Do not perform this upgrade if the above requirements aren't met.
 
+### Nitro contracts 2.1.2
+
+The [`nitro-contracts 2.1.2` upgrade guide](scripts/foundry/contract-upgrades/2.1.2) will patch the `ERC20Bridge` with a storage layout fix.
+
+This upgrade is only required if:
+
+1. The chain has a custom native token; AND
+1. The chain was originally deployed before `v2.0.0`; AND
+1. The chain wishes to upgrade to `v3.0.0`
+
+Do not perform this upgrade if the above requirements aren't met.
+
 ### Nitro contracts 2.1.0 (for [ArbOS 32 Bianca](https://docs.arbitrum.io/run-arbitrum-node/arbos-releases/arbos32))
 
 The [`nitro-contracts 2.1.0` upgrade action](scripts/foundry/contract-upgrades/2.1.0) will deploy `nitro-contracts v2.1.0` contracts to your Orbit's parent chain. Note that this action will only work for chains with `nitro-contracts v1.2.1` or `nitro-contracts v1.3.0`.
