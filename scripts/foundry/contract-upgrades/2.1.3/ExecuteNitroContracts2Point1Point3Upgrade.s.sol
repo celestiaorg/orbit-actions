@@ -16,11 +16,12 @@ import {IUpgradeExecutor} from "@offchainlabs/upgrade-executor/src/IUpgradeExecu
  * @notice This script executes nitro contracts 2.1.3 upgrade through UpgradeExecutor
  */
 contract ExecuteNitroContracts2Point1Point3UpgradeScript is Script {
-    function run() public {
-        NitroContracts2Point1Point3UpgradeAction upgradeAction =
-            NitroContracts2Point1Point3UpgradeAction(vm.envAddress("UPGRADE_ACTION_ADDRESS"));
+  function run() public {
+    NitroContracts2Point1Point3UpgradeAction upgradeAction = NitroContracts2Point1Point3UpgradeAction(
+        vm.envAddress('UPGRADE_ACTION_ADDRESS')
+      );
 
-        address inbox = (vm.envAddress("INBOX_ADDRESS"));
+    address inbox = (vm.envAddress('INBOX_ADDRESS'));
 
         // validate MAX_DATA_SIZE
         uint256 maxDataSize = vm.envUint("MAX_DATA_SIZE");
@@ -38,11 +39,13 @@ contract ExecuteNitroContracts2Point1Point3UpgradeScript is Script {
         bytes memory upgradeCalldata =
             abi.encodeCall(NitroContracts2Point1Point3UpgradeAction.perform, (inbox, proxyAdmin));
 
-        // execute the upgrade
-        // action checks prerequisites, and script will fail if the action reverts
-        IUpgradeExecutor executor = IUpgradeExecutor(vm.envAddress("PARENT_UPGRADE_EXECUTOR_ADDRESS"));
-        vm.startBroadcast();
-        executor.execute(address(upgradeAction), upgradeCalldata);
-        vm.stopBroadcast();
-    }
+    // execute the upgrade
+    // action checks prerequisites, and script will fail if the action reverts
+    IUpgradeExecutor executor = IUpgradeExecutor(
+      vm.envAddress('PARENT_UPGRADE_EXECUTOR_ADDRESS')
+    );
+    vm.startBroadcast();
+    executor.execute(address(upgradeAction), upgradeCalldata);
+    vm.stopBroadcast();
+  }
 }
