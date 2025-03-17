@@ -5,7 +5,7 @@
 >
 > v3.0.0 is also compatible with an EIP7702 enabled parent chain.
 
-These scripts deploy and execute the `CelestiaNitroContracts2Point1Point3UpgradeAction` contract which allows Orbit chains to upgrade to the Celestia compatible [2.1.3 release](https://github.com/celestiaorg/nitro-contracts/tree/v2.1.3).
+These scripts deploy and execute the `CelestiaNitroContracts2Point1Point3UpgradeAction` (for migrations) or the `NitroContracts2Point1Point3UpgradeAction` (for updating a chain with Celestia DA) contract which allows Orbit chains to upgrade to the Celestia compatible [2.1.3 release](https://github.com/celestiaorg/nitro-contracts/tree/v2.1.3).
 
 Upgrading to `v2.1.3` not required nor recommended if the chain aims to upgrade to v3.0.0 before the parent chain gets EIP7702.
 
@@ -30,7 +30,10 @@ This upgrade only support upgrading from the following [nitro-contract release](
 
 Please refer to the top [README](/README.md#check-version-and-upgrade-path) `Check Version and Upgrade Path` on how to determine your current nitro contracts version.
 
-## How to use it
+## How to use the Migration action
+
+> [!NOTE]
+> For updating a chain, the instructions are similar to that of `/contract-upgrades/2.1.3`
 
 1. Setup .env according to the example files, make sure you have everything correctly defined. The .env file must be in project root for recent foundry versions.
 
@@ -38,19 +41,19 @@ Please refer to the top [README](/README.md#check-version-and-upgrade-path) `Che
 > The .env file must be in project root.
 
 2. (Skip this step if you can use the deployed instances of action contract)
-   `DeployNitroContracts2Point1Point3UpgradeActionScript.s.sol` script deploys templates, and upgrade action itself. It can be executed in this directory like this:
+   `DeployCelestiaMigrationNitroContracts2Point1Point3UpgradeActionScript.s.sol` script deploys templates, and upgrade action itself. It can be executed in this directory like this:
 
 ```bash
-forge script --sender $DEPLOYER --rpc-url $PARENT_CHAIN_RPC --broadcast --slow DeployNitroContracts2Point1Point3UpgradeActionScript -vvv --verify --skip-simulation
+forge script --sender $DEPLOYER --rpc-url $PARENT_CHAIN_RPC --broadcast --slow DeployCelestiaMigrationNitroContracts2Point1Point3UpgradeActionScript -vvv --verify --skip-simulation
 # use --account XXX / --private-key XXX / --interactive / --ledger to set the account to send the transaction from
 ```
 
 As a result, all templates and upgrade action are deployed. Note the last deployed address - that's the upgrade action.
 
-3. `ExecuteNitroContracts2Point1Point3Upgrade.s.sol` script uses previously deployed upgrade action to execute the upgrade. It makes following assumptions - L1UpgradeExecutor is the rollup owner, and there is an EOA which has executor rights on the L1UpgradeExecutor. Proceed with upgrade using the owner account (the one with executor rights on L1UpgradeExecutor):
+3. `ExecuteCelestiaMigrationNitroContracts2Point1Point3Upgrade.s.sol` script uses previously deployed upgrade action to execute the upgrade. It makes following assumptions - L1UpgradeExecutor is the rollup owner, and there is an EOA which has executor rights on the L1UpgradeExecutor. Proceed with upgrade using the owner account (the one with executor rights on L1UpgradeExecutor):
 
 ```bash
-forge script --sender $EXECUTOR --rpc-url $PARENT_CHAIN_RPC --broadcast ExecuteNitroContracts2Point1Point3UpgradeScript -vvv
+forge script --sender $EXECUTOR --rpc-url $PARENT_CHAIN_RPC --broadcast ExecuteCelestiaMigrationNitroContracts2Point1Point3Upgrade -vvv
 # use --account XXX / --private-key XXX / --interactive / --ledger to set the account to send the transaction from
 ```
 
