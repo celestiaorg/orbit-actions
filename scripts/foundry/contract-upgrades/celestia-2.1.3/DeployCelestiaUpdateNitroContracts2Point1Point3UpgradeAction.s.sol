@@ -10,7 +10,7 @@ import { MockArbSys } from '../../helper/MockArbSys.sol';
  * @notice This script deploys the ERC20Bridge contract and NitroContracts2Point1Point3UpgradeAction contract.
  * @notice for executing this update, deploy first then use /scripts/foundry/contract-upgrades/2.1.3/ExecuteNitroContracts2Point1Point3UpgradeScript.s.sol
  */
-contract DeployCelestiaNitroContracts2Point1Point3UpgradeActionScript is
+contract DeployNitroContracts2Point1Point3UpgradeActionCelestiaScript is
   DeploymentHelpersScript
 {
   function run() public {
