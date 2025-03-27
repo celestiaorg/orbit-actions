@@ -46,32 +46,32 @@ contract DeployCelestiaMigrationNitroContracts2Point1Point3UpgradeActionScript i
       uint chainId = vm.envUint('CHAIN_ID');
       if (chainId == 1) {
         ospHostIo = deployBytecodeFromJSON(
-          '/celestia-2.1.0/mainnet/OneStepProverHostIo.sol/OneStepProverHostIo.json'
+          '/node_modules/celestia-nitro-contracts-2.1.0-1/build/contracts/src/osp/celestia/ethereum/OneStepProverHostIo.sol/OneStepProverHostIo.json'
         );
       } else if (chainId == 11155111) {
         // sepolia
         ospHostIo = deployBytecodeFromJSON(
-          '/celestia-2.1.0/sepolia/OneStepProverHostIo.sol/OneStepProverHostIo.json'
+          '/node_modules/celestia-nitro-contracts-2.1.0-1/build/contracts/src/osp/celestia/sepolia/OneStepProverHostIo.sol/OneStepProverHostIo.json'
         );
       } else if (chainId == 42161) {
         // arbitrum one
         ospHostIo = deployBytecodeFromJSON(
-          '/celestia-2.1.0/arbitrum-one/OneStepProverHostIo.sol/OneStepProverHostIo.json'
+          '/node_modules/celestia-nitro-contracts-2.1.0-1/build/contracts/src/osp/celestia/arbitrum-one/OneStepProverHostIo.sol/OneStepProverHostIo.json'
         );
       } else if (chainId == 421614) {
         // arbitrum sepolia
         ospHostIo = deployBytecodeFromJSON(
-          '/celestia-2.1.0/arbitrum-sepolia/OneStepProverHostIo.sol/OneStepProverHostIo.json'
+          '/node_modules/celestia-nitro-contracts-2.1.0-1/build/contracts/src/osp/celestia/arbitrum-sepolia/OneStepProverHostIo.sol/OneStepProverHostIo.json'
         );
       } else if (chainId == 8453) {
         // base
         ospHostIo = deployBytecodeFromJSON(
-          '/celestia-2.1.0/base/OneStepProverHostIo.sol/OneStepProverHostIo.json'
+          '/node_modules/celestia-nitro-contracts-2.1.0-1/build/contracts/src/osp/celestia/base/OneStepProverHostIo.sol/OneStepProverHostIo.json'
         );
       } else if (chainId == 84532) {
         // base sepolia
         ospHostIo = deployBytecodeFromJSON(
-          '/celestia-2.1.0/base-sepolia/OneStepProverHostIo.sol/OneStepProverHostIo.json'
+          '/node_modules/celestia-nitro-contracts-2.1.0-1/build/contracts/src/osp/celestia/base-sepolia/OneStepProverHostIo.sol/OneStepProverHostIo.json'
         );
       }
 
@@ -130,13 +130,13 @@ contract DeployCelestiaMigrationNitroContracts2Point1Point3UpgradeActionScript i
 
     // deploy new EthSequencerInbox contract from v2.1.3
     address newEthSeqInboxImpl = deployBytecodeWithConstructorFromJSON(
-      '/celestia-2.1.3/SequencerInbox.sol/SequencerInbox.json',
+      '/node_modules/celestia-nitro-contracts-2.1.3/build/contracts/src/bridge/SequencerInbox.sol/SequencerInbox.json',
       abi.encode(vm.envUint('MAX_DATA_SIZE'), reader4844Address, false)
     );
 
     // deploy new Erc20SequencerInbox contract from v2.1.3
     address newErc20SeqInboxImpl = deployBytecodeWithConstructorFromJSON(
-      '/celestia-2.1.3/SequencerInbox.sol/SequencerInbox.json',
+      '/node_modules/celestia-nitro-contracts-2.1.3/build/contracts/src/bridge/SequencerInbox.sol/SequencerInbox.json',
       abi.encode(vm.envUint('MAX_DATA_SIZE'), reader4844Address, true)
     );
 
