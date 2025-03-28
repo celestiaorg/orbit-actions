@@ -1,0 +1,1 @@
+Error: Command failed: solc --via-ir --optimize --optimize-runs=200 /home/dferrer/repos/orbit-actions/contracts/parent-chain/contract-upgrades/NitroContracts2Point1Point3UpgradeAction.sol -o /home/dferrer/repos/orbit-actions/temp-ir-tests 2>&1

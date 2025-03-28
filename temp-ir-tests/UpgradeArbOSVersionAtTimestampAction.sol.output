@@ -1,0 +1,1 @@
+Error: Command failed: solc --via-ir --optimize --optimize-runs=200 /home/dferrer/repos/orbit-actions/contracts/child-chain/arbos-upgrade/UpgradeArbOSVersionAtTimestampAction.sol -o /home/dferrer/repos/orbit-actions/temp-ir-tests 2>&1

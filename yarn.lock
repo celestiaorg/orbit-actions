@@ -1875,10 +1875,10 @@ cbor@^9.0.0:
   dependencies:
     nofilter "^3.1.0"
 
-"celestia-nitro-contracts-2.1.0-1@npm:celestia-nitro-contracts@2.1.0-1":
-  version "2.1.0-1"
-  resolved "https://registry.yarnpkg.com/celestia-nitro-contracts/-/celestia-nitro-contracts-2.1.0-1.tgz#5207129fb3b0d3ea1c95284927c97035880b73bb"
-  integrity sha512-QLtXcuFcC6dtwOSQvNC+pLLzm38FzZfnXv6DG0tD7aFz/e05y+6M9oGoshxmljjtboFJSvoyj6UC3duBb/yLqw==
+"celestia-nitro-contracts-2.1.0-no-ir@npm:celestia-nitro-contracts@2.1.0-no-ir":
+  version "2.1.0-no-ir"
+  resolved "https://registry.yarnpkg.com/celestia-nitro-contracts/-/celestia-nitro-contracts-2.1.0-no-ir.tgz#83328c9ac6a9b1fa5d2dcee2d7a82958e1e459cf"
+  integrity sha512-U8ZoU4K/UN0y8be8gMaYRHU4mqNo3ZrOAkxXIzFAngBvFIsp5xAF8gVNegn1XZUhvTChDHnWeIGSVP0/DpqBUQ==
   dependencies:
     "@offchainlabs/upgrade-executor" "1.1.0-beta.0"
     "@openzeppelin/contracts" "4.5.0"
@@ -1886,10 +1886,10 @@ cbor@^9.0.0:
     patch-package "^6.4.7"
     solady "0.0.182"
 
-"celestia-nitro-contracts-2.1.3@npm:celestia-nitro-contracts@2.1.3":
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/celestia-nitro-contracts/-/celestia-nitro-contracts-2.1.3.tgz#4122f76c19b7a8756844ae537a247664a747b263"
-  integrity sha512-lRM00SxWX6FMPELEp0gPW5HGHN3pX8E+ASiFZuFRXpKzdfnFJ2+ThDngTlbpy+aMUkJuZfbDhwkXIZNxiAWxHw==
+"celestia-nitro-contracts-2.1.3-no-ir@npm:celestia-nitro-contracts@2.1.3-no-ir":
+  version "2.1.3-no-ir"
+  resolved "https://registry.yarnpkg.com/celestia-nitro-contracts/-/celestia-nitro-contracts-2.1.3-no-ir.tgz#9d88a8055338527e98f8214ccb90abf31fc95d03"
+  integrity sha512-4/6ktUciW9bviPsruq9z4tgR0XI0zQsFiYUKzGGFlOVLs1p7hwd1nRU8H4J2V2ULdM3pwbl0Mpu3uENL378JNw==
   dependencies:
     "@offchainlabs/upgrade-executor" "1.1.0-beta.0"
     "@openzeppelin/contracts" "4.5.0"
