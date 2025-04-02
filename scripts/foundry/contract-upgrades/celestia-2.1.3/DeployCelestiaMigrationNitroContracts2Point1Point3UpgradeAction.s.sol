@@ -95,7 +95,7 @@ contract DeployCelestiaMigrationNitroContracts2Point1Point3UpgradeActionScript i
       );
 
       address ospHostIo = deployBytecodeFromJSON(
-        '/node_modules/@arbitrum/nitro-contracts-2.1.0/build/contracts/src/osp/OneStepProverHostIo.sol/OneStepProverHostIo.json'
+        '/node_modules/@arbitrum/nitro-contracts-1.3.0/build/contracts/src/osp/OneStepProverHostIo.sol/OneStepProverHostIo.json'
       );
 
       condOsp = deployBytecodeWithConstructorFromJSON(
